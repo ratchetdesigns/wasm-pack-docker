@@ -15,7 +15,8 @@ RUN apk add --no-cache \
 
 ENV USER=wasm-pack
 
-RUN adduser --uid 1000 --disabled-password "${USER}"
+RUN adduser --uid 1000 --disabled-password "${USER}" \
+    && chmod -R 777 /usr/local/cargo/registry
 
 WORKDIR /work
 USER wasm-pack
