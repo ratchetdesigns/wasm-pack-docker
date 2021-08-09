@@ -6,6 +6,8 @@ Docker container for [wasm-pack](https://rustwasm.github.io/wasm-pack).
 docker run --rm -v "$(pwd):/work" ratchetdesigns/wasm-pack new my-project --mode noinstall
 ```
 
+You may want to add `-v "path-to-cargo-cache:/usr/local/cargo/registry"`.
+
 We run everything as uid 1000 by default, with a user named wasm-pack.
 The user name is used by wasm-pack to infer an author name so you might want to run with `-e "USER=$USER"`.
 
