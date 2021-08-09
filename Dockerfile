@@ -12,8 +12,9 @@ RUN apk add --no-cache \
       openssl-dev \
       perl \
       make \
-    && chmod -R 777 /usr/local/cargo/registry \
-    && cargo install wasm-pack --version=${WASM_PACK_VERSION}
+    && cargo install wasm-pack --version=${WASM_PACK_VERSION} \
+    && rustup target add wasm32-unknown-unknown \
+    && chmod -R 777 /usr/local/cargo/registry
 
 ENV USER=wasm-pack
 
