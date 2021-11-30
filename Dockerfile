@@ -1,7 +1,7 @@
-FROM rust:1.54.0-alpine3.14
+FROM rust:1.56.1-alpine3.14
 
-ARG NODE_VERSION=14.17.4-r0
-ARG WASM_PACK_VERSION=0.10.0
+ARG NODE_VERSION=14.18.1-r0
+ARG WASM_PACK_VERSION=0.10.1
 
 RUN apk add --no-cache \
       nodejs=${NODE_VERSION} \
